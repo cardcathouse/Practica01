@@ -48,6 +48,8 @@
    for (i=0; i<(IFNAMSIZ-1); i++) MiMAC[i] = 0xFF&if_mac.ifr_hwaddr.sa_data[i]; 
    printf ("Direccion MAC de la interfaz de entrada: %d, MAC: %02x:%02x:%02x:%02x:%02x:%02x\n", 0xFF&if_idx.ifr_ifindex, 
            MiMAC[0], MiMAC[1], MiMAC[2], MiMAC[3], MiMAC[4], MiMAC[5]);
+
+    int recPack = 0;
    
    do {   
      saddr_size = sizeof saddr;
@@ -65,6 +67,8 @@
        for (i=0; i<numbytes; i++) printf("%02x ", buf[i]);
        printf("\n");                
      }
+     recPack++;
+     printf("Número de paquetes recibidos: %d", recPack);
    } while (1);
 
    close(sockfd); 
