@@ -65,10 +65,12 @@
                 eh->ether_shost[0], eh->ether_shost[1], eh->ether_shost[2],
                 eh->ether_shost[3], eh->ether_shost[4], eh->ether_shost[5]);                
        for (i=0; i<numbytes; i++) printf("%02x ", buf[i]);
-       printf("\n");                
+       printf("\n");
+       recPack++;
+       printf("Número de paquetes recibidos: %d\n", recPack);
+       printf("Velocidad de transmisión actual: %d\n", (119*8)/60);
+       printf("Paquetes por segundo: %d\n: ", recPack/60);
      }
-     recPack++;
-     printf("Número de paquetes recibidos: %d", recPack);
    } while (1);
 
    close(sockfd); 
