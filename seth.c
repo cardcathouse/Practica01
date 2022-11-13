@@ -93,6 +93,6 @@ int main(int argc, char *argv[])
   
   /*Cerramos*/
   close (sockfd);
-  printf("Número de paquetes enviados: %d", packCounter);
+  printf("Número de paquetes enviados: %d\n", packCounter);
   return 0;
 }
